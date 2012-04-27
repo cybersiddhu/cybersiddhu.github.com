@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zsh | Hight throughput procrastination]]></title>
+  <link href="http://cybersiddhu.github.com/blog/categories/zsh/atom.xml" rel="self"/>
+  <link href="http://cybersiddhu.github.com/"/>
+  <updated>2012-04-27T08:10:45-05:00</updated>
+  <id>http://cybersiddhu.github.com/</id>
+  <author>
+    <name><![CDATA[Siddhartha basu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Url shortner custom plugin for oh-my-zsh]]></title>
+    <link href="http://cybersiddhu.github.com/blog/2012/04/27/ohmyzsh-plugin/"/>
+    <updated>2012-04-27T06:29:00-05:00</updated>
+    <id>http://cybersiddhu.github.com/blog/2012/04/27/ohmyzsh-plugin</id>
+    <content type="html"><![CDATA[<p>I was looking to have a command line for shortning urls, particularly to tag along with my
+favourite twitter client <a href="https://github.com/jugyo/earthquake">earthquake</a>. There are
+bunch of services and i saw
+<a href="http://www.commandlinefu.com/commands/view/6709/google-url-shortener">one</a> that uses
+google url shortner. However,  it didn't work as google api requires an API key. So,
+after getting an <a href="https://developers.google.com/url-shortener/v1/getting_started">API
+key</a>,
+here is the command line ...
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>'url shortner'  (shorty.zsh)</span> <a href='/downloads/code/shorty.zsh'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Add your own custom plugins in the custom/plugins directory. Plugins placed</span>
+</span><span class='line'><span class="c"># here will override ones with the same name in the main plugins directory.</span>
+</span><span class='line'>shorty <span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  curl -s https://www.googleapis.com/urlshortener/v1/url<span class="se">\?</span>key<span class="se">\=</span>API_KEY <span class="se">\</span>
+</span><span class='line'>     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\ </span>
+</span><span class='line'>     -d <span class="s1">&#39;{&quot;longUrl&quot;: &quot;&#39;</span><span class="s2">&quot;$1&quot;</span><span class="s1">&#39;&quot;}&#39;</span> | egrep -o <span class="s1">&#39;http://goo.gl/[^&quot;]*&#39;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+Now save this in a .bashrc/.zshrc or source it from a separate file to invoke it as a
+command.
+<code>bash
+source shorty.zsh
+shorty your_url
+</code></p>
+
+<p>And if you are running <a href="">Ohmyzsh</a> framework, then just make it available as a custom
+plugin.
+<code>bash
+cd ~/.oh-my-zsh/custom
+mkdir -p plugins/shorty &amp;&amp; cd plugins/shorty
+cat shorty.zsh &gt; shorty.plugin.zsh
+</code></p>
+
+<p>Now activate the plugin in in your ~/.zshrc
+```bash activate plugin</p>
+
+<h1>Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)</h1>
+
+<h1>Example format: plugins=(rails git textmate ruby lighthouse)</h1>
+
+<p>plugins=(git rvm cpanm shorty)</p>
+
+<p>$<em>> source ~/.zshrc
+$</em>> shorty 'url'
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
