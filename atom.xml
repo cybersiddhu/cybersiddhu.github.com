@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Hight throughput procrastination]]></title>
+  <link href="http://cybersiddhu.github.com/atom.xml" rel="self"/>
+  <link href="http://cybersiddhu.github.com/"/>
+  <updated>2012-04-27T06:25:41-05:00</updated>
+  <id>http://cybersiddhu.github.com/</id>
+  <author>
+    <name><![CDATA[Siddhartha basu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
