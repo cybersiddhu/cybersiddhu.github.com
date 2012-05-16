@@ -20,4 +20,5 @@ footer: true
 * Distributing your own module with [staticperl](https://metacpan.org/module/staticperl)
 * Setting up vim environment with pathogen plugin. Set it up both for python and perl
   programming.
+* Integrating modware loader with galaxy environment.
 
