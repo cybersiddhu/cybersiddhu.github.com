@@ -9,7 +9,7 @@ footer: true
 
 
 * Automated indexing of blast database.
-* Indexing and searching of chado content with [Elasticsearch][http://www.elasticsearch.org]
+* Indexing and searching of chado content with [Elasticsearch](http://www.elasticsearch.org)
 * zsh autocompletion plugin for your MooseX::App::Cmd classes.
 * Versioning and migration of chado database.
 * Mojolicious web application to display PPI or protein-protein interaction network.
@@ -21,4 +21,5 @@ footer: true
 * Setting up vim environment with pathogen plugin. Set it up both for python and perl
   programming.
 * Integrating modware loader with galaxy environment.
+* Chado database versioning.
 
